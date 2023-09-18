@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .my-wrapper {
+        max-width: 1170px;
+        margin: auto;
+      }
+      img {
+        width: 100%;
+      }
+      .profilepic {
+        width: 48px;
+        height: 48px;
+      }
+      #fbcomments h3 {
+        font-family: helvetica, arial, sans-serif;
+        color: #3b5998;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: left;
+        cursor: pointer;
+        margin: 0;
+        display: inline-block;
+      }
+      #fbcomments p {
+        margin: 4px 0px;
+        color: black;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0;
+        text-align: left;
+        word-wrap: break-word;
+      }
+      .fbbuttons .blue {
+        color: #627aad;
+        font-size: 12px;
+        margin: 0;
+        cursor: pointer;
+      }
+      .fbbuttons .blue {
+        color: #627aad;
+        font-size: 12px;
+        margin: 0;
+        cursor: pointer;
+      }
+      .likeduim {
+        margin-right: 0px;
+        position: relative;
+        bottom: 3px;
+        height: 15px;
+        width: 13px;
+      }
+      .fbbuttons .grijs {
+        color: #7f7f7f;
+        font-size: 12px;
+        margin: 0;
+      }
+      .fbbuttons .grijs {
+        color: #7f7f7f;
+        font-size: 12px;
+        margin: 0;
+      }
+      .prflpcCmt {
+        height: 36px;
+        width: 36px;
+      }
+      .profilepic {
+        float: left;
+        display: block;
+        margin-right: 8px;
+        height: 48px;
+        width: 48px;
+        margin-top: 5px;
+      }
+      #fbcommentslist li {
+        margin: 8px 0px;
+      }
+      .my-custom-image {
+        width: 150px;
+      }
+      .my-custom-imag {
+        width: 200px;
+      }
+      li ul {
+        border-left: 1px dotted #d3d6db;
+      }
+      .prflpcCmt {
+        height: 36px;
+        width: 36px;
+      }
+      .el-753661 {
+        font-size: 16px;
+        text-align: center;
+      }
+      @media screen and (max-width: 400px) {
+        .comment-input {
+          width: 90% !important;
+        }
+        strong {
+          margin-left: 10px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="my-wrapper">
+      <div
+        data-v-4b3acc2c=""
+        data-v-6bea8f81=""
+        data-eid="323674"
+        id="323674"
+        class="section_row"
+        style="
+          border-width: 0px;
+          border-style: solid;
+          border-color: transparent;
+          color: rgb(48, 48, 48);
+          font-size: 14px;
+          text-align: initial;
+          margin: 20px 0px 115px;
+          padding: 0px;
+          background-size: auto;
+          background-repeat: no-repeat;
+        "
+      >
+        <div
+          data-v-796cd32d=""
+          data-v-4b3acc2c=""
+          class="row-column"
+          style="width: 100%"
+        >
+          <div
+            data-v-8b814fa4=""
+            data-v-796cd32d=""
+            data-eid="753661"
+            class="element-wrapper"
+          >
+            <div
+              data-v-8b814fa4=""
+              class="paragraph el-753661"
+              style="
+                font-family: 'Open Sans';
+                line-height: 1;
+                margin: 10px 0px 0px;
+                padding: 10px;
+                text-shadow: transparent 0px 0px 0px;
+              "
+            >
+              <style>
+                .el-753661 {
+                  font-size: 16px;
+                  text-align: center;
+                }
+              </style>
+              <div class="paragraph-inner">
+                <p style="text-align: left"><strong>Comments</strong></p>
+              </div>
+            </div>
+          </div>
+          <div
+            data-v-8b814fa4=""
+            data-v-796cd32d=""
+            data-eid="575210"
+            class="element-wrapper"
+          >
+            <div data-v-8b814fa4="" class="custom" style="margin: 10px 0px 0px">
+              <div class="custom-inner el-575210">
+                <style>
+                  /*** Textbox*/
+                  .textbox {
+                  }
+                  .textbox-facebook {
+                    outline: none;
+                    border: none;
+                    background: white;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 14px;
+                    padding: 20px 20px;
+                    box-sizing: border-box;
+                    width: 100%;
+                  }
+                  .textbox-facebook::placeholder {
+                    color: #a1a1a1;
+                  }
+                  .textbox-facebook:focus::placeholder {
+                    color: #b4b4b4;
+                  } /*** Comments*/
+                  .comments {
+                    padding: 0;
+                    margin: 0;
+                    box-sizing: border-box;
+                    padding: 25px;
+                    display: none;
+                    overflow-y: hidden !important;
+                  }
+                  .comments-description {
+                    position: relative;
+                    margin: 0px 0px 0px 8px;
+                  }
+                  .fb-comments {
+                    overflow: hidden; /*box-sizing: border-box;*/
+                    position: relative;
+                    width: 60px;
+                    height: 170px;
+                  }
+                  .fb-comments::before {
+                    content: "";
+                    top: 50px;
+                    display: block;
+                    height: 50px;
+                    width: 60px;
+                    position: relative;
+                    z-index: 1;
+                    background: white;
+                  }
+                  .comment-input-holder {
+                    background: white;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                  }
+                  .comment-holder {
+                    position: relative;
+                    box-sizing: border-box;
+                  }
+                  .comment-styling {
+                    background: white;
+                    height: 60px;
+                    top: 0px;
+                    z-index: 1;
+                  }
+                  .comment-input {
+                    border: 1px solid #dedede;
+                    width: 100%;
+                    margin: 0 auto;
+                  }
+                  .comment-options {
+                    border-top: 1px solid #dedede;
+                    background: rgb(246, 247, 249);
+                    padding: 8px 12px;
+                    display: none;
+                  }
+                  @media screen and (max-width: 1020px) {
+                    .clearfix {
+                      display: block;
+                    }
+                    .border-right {
+                      border: 0px solid transparent;
+                    }
+                    .content article {
+                      margin: 0;
+                      padding: 0;
+                      box-sizing: border-box;
+                      float: none;
+                      width: 100%;
+                    }
+                    .comment-holder {
+                      top: 10px;
+                      margin-bottom: 15px;
+                    }
+                    #fb-comments {
+                      display: none;
+                    }
+                    #comment-input-holder {
+                      margin: 0;
+                      padding: 0;
+                      width: 100%;
+                    }
+                    .content aside {
+                      width: 0;
+                      margin: 0;
+                      padding: 0;
+                      display: none;
+                      float: none;
+                    }
+                    .title h1 {
+                      font-size: 26px;
+                    }
+                  }
+                  @media screen and (max-width: 400px) {
+                    #comment-text {
+                      width: 100%;
+                    }
+                    #comment-input-holder {
+                      width: 100%;
+                      margin-right: 0px;
+                      left: 0;
+                    }
+                  }
+                  ul#fbcommentslist {
+                    margin: 0 10px 48px 5px;
+                  }
+                  .profilepic {
+                    float: left;
+                    display: block;
+                    margin-right: 8px;
+                    height: 48px;
+                    width: 48px;
+                    margin-top: 5px;
+                  }
+                  .offer_main {
+                    margin: 0px 20px;
+                    position: absolute;
+                    bottom: 10px;
+                    right: 50px;
+                  }
+                  .prflpcCmt {
+                    height: 36px;
+                    width: 36px;
+                  }
+                  #fbcommentslist li {
+                    margin: 8px 0px;
+                  }
+                  #fbcomments {
+                    background-color: white;
+                    position: relative;
+                    width: 100%;
+                    border-bottom: 1px solid #e9eaed;
+                  }
+                  #fbcomments h3 {
+                    font-family: helvetica, arial, sans-serif;
+                    color: #3b5998;
+                    font-weight: bold;
+                    font-size: 14px;
+                    text-align: left;
+                    cursor: pointer;
+                    margin: 0;
+                    display: inline-block;
+                  }
+                  #fbcomments p {
+                    margin: 4px 0px;
+                    color: black;
+                    font-family: Helvetica, Arial, sans-serif;
+                    font-size: 14px;
+                    line-height: 20px;
+                    letter-spacing: 0;
+                    text-align: left;
+                    word-wrap: break-word;
+                  }
+                  #idbuttons div {
+                    padding-top: 2px;
+                  }
+                  .fbbuttons {
+                    height: 25px;
+                  }
+                  .fbbuttons .blue {
+                    color: #627aad;
+                    font-size: 12px;
+                    margin: 0;
+                    cursor: pointer;
+                  }
+                  .fbbuttons .grijs {
+                    color: #7f7f7f;
+                    font-size: 12px;
+                    margin: 0;
+                  }
+                  .fbbuttons .like:hover {
+                    text-decoration: underline;
+                  }
+                  .fbbuttons .reply:hover {
+                    text-decoration: underline;
+                  }
+                  .likeduim {
+                    margin-right: 0px;
+                    position: relative;
+                    bottom: 3px;
+                    height: 15px;
+                    width: 13px;
+                  }
+                  .cmtdatum {
+                    cursor: pointer;
+                  }
+                  #input {
+                    outline: 0px solid transparent;
+                    border: 1px solid #d3d6db;
+                    word-wrap: break-word;
+                    font-family: helvetica, arial, sans-serif;
+                    font-size: 14px;
+                    cursor: text;
+                    min-height: 20px;
+                    padding: 15px 11px;
+                    width: 454px;
+                    background-color: white;
+                  }
+                  #nocmttxt {
+                    font-family: helvetica, arial, sans-serif;
+                    font-size: 14px;
+                    color: #a9a9a9;
+                    position: absolute;
+                    left: 12px;
+                    top: 16px;
+                    pointer-events: none;
+                  }
+                  .tag {
+                    color: #627aad;
+                    margin: 0;
+                    cursor: pointer;
+                  }
+                  .tag:hover {
+                    text-decoration: underline;
+                  }
+                  #fbsubmit {
+                    border: 1px solid #d3d6db;
+                    border-top: 0;
+                    background: #f6f7f8;
+                    padding: 8px;
+                    display: none;
+                    width: 460px;
+                    height: 24px;
+                  }
+                  #fbsubmit p {
+                    font-weight: bold;
+                    opacity: 0;
+                  }
+                  ul {
+                    padding: 0;
+                    margin-bottom: 10px;
+                  }
+                  li ul {
+                    border-left: 1px dotted #d3d6db;
+                  }
+                  .unselectable {
+                    -moz-user-select: -moz-none;
+                    -khtml-user-select: none;
+                    -webkit-user-select: none;
+                    -o-user-select: none;
+                    user-select: none;
+                  }
+                  #commentsInnerWrap {
+                    width: 550px;
+                    background-color: transparent;
+                    position: relative;
+                  }
+                  #inputZone {
+                    background-color: transparent;
+                    position: relative;
+                    margin-top: 12px;
+                    margin-left: 64px;
+                  }
+                  #postBtn {
+                    position: absolute;
+                    cursor: pointer;
+                    top: 60px;
+                    left: 393px;
+                  }
+                  .emoticon {
+                    vertical-align: -3px;
+                  }
+                  .call-bar {
+                    margin: 0;
+                    padding: 0;
+                    position: fixed;
+                    background: white;
+                    box-sizing: border-box;
+                    display: block;
+                    width: 100%;
+                    font-size: 24px;
+                    padding: 1.5vw 0vw;
+                    text-align: center;
+                    bottom: 0px;
+                    box-shadow: 0px 0px 5px #999;
+                  }
+                  .callbar-number {
+                    margin: 0;
+                    padding: 0;
+                  }
+                  .small-callbar {
+                    font-size: 14px;
+                    position: relative;
+                    bottom: 4px;
+                  }
+                  .button-callbar {
+                    margin: 0;
+                    padding: 0;
+                    padding: 3.5vw 9vw 2.5vw 9vw;
+                    margin: 0.2vw 0vw 1vw 0vw;
+                    font-size: 4vw;
+                  }
+                </style>
+
+                <div class="comment-input-holder" id="comment-input-holder">
+                  <div class="comment-user" id="comment-user">
+                    <div id="fb-root"></div>
+                  </div>
+                  <div class="comment-input">
+                    <input
+                      id="comment-text"
+                      class="textbox textbox-facebook"
+                      placeholder="Add a comment ..."
+                    />
+                    <div
+                      class="comment-options align-right"
+                      id="comment-options"
+                    >
+                      <div class="init-error hidden inline-block" id="error">
+                        Error occurred during initialization
+                      </div>
+                      <button
+                        id="post-button"
+                        class="button button-facebook button-disabled inline-block"
+                      >
+                        Publish
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment-holder clearfix" id="fbcomments">
+                  <ul style="padding-left: 7px" id="fbcommentslist">
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/1-min.jpg?v=1690369427"
+                      />
+                      <div style="display: table">
+                        <h3 style="text-decoration: none">
+                          Margaret Golsdsmith
+                        </h3>
+                        <p>Can anybody tell me if they actually work?</p>
+                        <div class="fbbuttons" likes="4" datum="39 min">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">5</span>
+                            ·&nbsp;<span class="cmtdatum grijs">43 min</span>
+                          </p>
+                        </div>
+                        <ul>
+                          <li style="list-style-type: none">
+                            <img
+                              class="profilepic prflpcCmt"
+                              src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/2-min.jpg?v=1690369428"
+                            />
+                            <div style="display: table">
+                              <h3 style="text-decoration: none">
+                                Raff Hartwell
+                              </h3>
+                              <p>
+                                I love it. Easy to use and works great for my
+                                stiff and sore back. It’s amazing!
+                              </p>
+                              <div class="fbbuttons" likes="7" datum="16 min">
+                                <p style="color: #7f7f7f">
+                                  <span class="like blue">Like</span>
+                                  ·&nbsp;<span class="reply blue">Reply</span>
+                                  ·&nbsp;<img
+                                    class="likeduim"
+                                    src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                                  />&nbsp;<span class="aantallikes grijs"
+                                    >8</span
+                                  >
+                                  ·&nbsp;<span class="cmtdatum grijs"
+                                    >14 min</span
+                                  >
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/3-min.jpg?v=1690369428"
+                      />
+                      <div style="display: table">
+                        <h3>Sherene Thompson</h3>
+                        <p>
+                          I bought mine at full price and now they are 50% off??
+                          Not fair! Looks like I’ll be ordering some more.
+                        </p>
+                        <div class="fbbuttons" likes="4" datum="51 min">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">6</span>
+                            ·&nbsp;<span
+                              class="cmtdatum grijs"
+                              style="text-decoration: none"
+                              >54 min</span
+                            >
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/4-min.jpg?v=1690369428"
+                      />
+                      <div style="display: table">
+                        <h3>Steven Noguera</h3>
+                        <p>How long is shipping?</p>
+                        <div class="fbbuttons" likes="1" datum="1 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">1</span>
+                            ·&nbsp;<span class="cmtdatum grijs">2 h</span>
+                          </p>
+                        </div>
+                        <ul>
+                          <li style="list-style-type: none">
+                            <img
+                              class="profilepic prflpcCmt"
+                              src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/5-min.jpg?v=1690369428"
+                            />
+                            <div style="display: table">
+                              <h3>Sophia Brown</h3>
+                              <p>Hey Steven, mine came in just over a week.</p>
+                              <div class="fbbuttons" likes="2" datum="24 min">
+                                <p style="color: #7f7f7f">
+                                  <span class="like blue">Like</span>
+                                  ·&nbsp;<span class="reply blue">Reply</span>
+                                  ·&nbsp;<img
+                                    class="likeduim"
+                                    src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                                  />&nbsp;<span class="aantallikes grijs"
+                                    >3</span
+                                  >
+                                  ·&nbsp;<span class="cmtdatum grijs"
+                                    >18 min</span
+                                  >
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/6-min.jpg?v=1690369428"
+                      />
+                      <div style="display: table">
+                        <h3>John Davis</h3>
+                        <p>
+                          This device has been a game-changer for me! The
+                          different settings are fantastic. My favourite mode is
+                          setting 5 (spine alignment mode), after the 15-minute
+                          session my lower back feels amazing. Super easy and
+                          convenient to use I always keep mine on me. Thank you
+                          oThera! This device is a life saver! <br /><img
+                            class="my-custom-image"
+                            src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/23-min.jpg?v=1690369427"
+                            height="200"
+                          />
+                        </p>
+                        <div class="fbbuttons" likes="6" datum="1 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">12</span>
+                            ·&nbsp;<span class="cmtdatum grijs">4 h</span>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/7-min.jpg?v=1690369428"
+                      />
+                      <div style="display: table">
+                        <h3>Isabella Martinez</h3>
+                        <p>
+                          Hey <span class="tag">jack</span>, you would love
+                          this!
+                        </p>
+                        <div class="fbbuttons" likes="2" datum="2 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">1</span>
+                            ·&nbsp;<span class="cmtdatum grijs">3 h</span>
+                          </p>
+                        </div>
+                        <ul>
+                          <li style="list-style-type: none">
+                            <img
+                              class="profilepic prflpcCmt"
+                              src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/8-min.jpg?v=1690369427"
+                            />
+                            <div style="display: table">
+                              <h3 style="text-decoration: none">
+                                Jack Anderson
+                              </h3>
+                              <p>
+                                Wow, these look amazing! Just ordered the 3 pack
+                                now!
+                              </p>
+                              <div class="fbbuttons" likes="3" datum="1 h">
+                                <p style="color: #7f7f7f">
+                                  <span class="like blue">Like</span>
+                                  ·&nbsp;<span class="reply blue">Reply</span>
+                                  ·&nbsp;<img
+                                    class="likeduim"
+                                    src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                                  />&nbsp;<span class="aantallikes grijs"
+                                    >1</span
+                                  >
+                                  ·&nbsp;<span class="cmtdatum grijs">1 h</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/9-min.jpg?v=1690369427"
+                      />
+                      <div style="display: table">
+                        <h3>Debbie Clive</h3>
+                        <p>Can anyone tell me how long these take to work?</p>
+                        <div class="fbbuttons" likes="2" datum="2 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">4</span>
+                            ·&nbsp;<span
+                              class="cmtdatum grijs"
+                              style="text-decoration: none"
+                              >2 h</span
+                            >
+                          </p>
+                        </div>
+                        <ul>
+                          <li style="list-style-type: none">
+                            <img
+                              class="profilepic prflpcCmt"
+                              src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/10-min.jpg?v=1690369427"
+                            />
+                            <div style="display: table">
+                              <h3 style="text-decoration: none">
+                                Sarah Monnaha
+                              </h3>
+                              <p>
+                                They relax muscles straight away! I have used
+                                mine for several weeks now and after about 2-3
+                                weeks my pain pretty much disappeared. Be
+                                patient, they really do work!
+                              </p>
+                              <div class="fbbuttons" likes="5" datum="2 h">
+                                <p style="color: #7f7f7f">
+                                  <span class="like blue">Like</span>
+                                  ·&nbsp;<span class="reply blue">Reply</span>
+                                  ·&nbsp;<img
+                                    class="likeduim"
+                                    src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                                  />&nbsp;<span class="aantallikes grijs"
+                                    >7</span
+                                  >
+                                  ·&nbsp;<span
+                                    class="cmtdatum grijs"
+                                    style="text-decoration: none"
+                                    >1 h</span
+                                  >
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/11-min.jpg?v=1690369427"
+                      />
+                      <div style="display: table">
+                        <h3>Ethan White</h3>
+                        <p>I just ordered 4! Cannot wait to use it</p>
+                        <div class="fbbuttons" likes="1" datum="3 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">2</span>
+                            ·&nbsp;<span class="cmtdatum grijs">26 min</span>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/12-min.jpg?v=1690369426"
+                      />
+                      <div style="display: table">
+                        <h3 style="text-decoration: none">Sophia Harris</h3>
+                        <p>I want one so bad!</p>
+                        <div class="fbbuttons" likes="1" datum="3 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">8</span>
+                            ·&nbsp;<span
+                              class="cmtdatum grijs"
+                              style="text-decoration: none"
+                              >4 h</span
+                            >
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/13-min.jpg?v=1690369428"
+                      />
+                      <div style="display: table">
+                        <h3>Mia Taylor</h3>
+                        <p>
+                          Does anyone know how long shipping takes? Just ordered
+                          one for my husband.
+                        </p>
+                        <div class="fbbuttons" likes="4" datum="3 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">3</span>
+                            ·&nbsp;<span
+                              class="cmtdatum grijs"
+                              style="text-decoration: none"
+                              >5 h</span
+                            >
+                          </p>
+                        </div>
+                        <ul>
+                          <li style="list-style-type: none">
+                            <img
+                              class="profilepic prflpcCmt"
+                              src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/14-min.jpg?v=1690369428"
+                            />
+                            <div style="display: table">
+                              <h3>Isolde Fairchild</h3>
+                              <p>Mine arrived after about 1.5 weeks</p>
+                              <div class="fbbuttons" likes="3" datum="2 h">
+                                <p style="color: #7f7f7f">
+                                  <span class="like blue">Like</span>
+                                  ·&nbsp;<span class="reply blue">Reply</span>
+                                  ·&nbsp;<img
+                                    class="likeduim"
+                                    src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                                  />&nbsp;<span class="aantallikes grijs"
+                                    >2</span
+                                  >
+                                  ·&nbsp;<span class="cmtdatum grijs">3 h</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                        <ul>
+                          <li style="list-style-type: none">
+                            <img
+                              class="profilepic prflpcCmt"
+                              src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/15-min.jpg?v=1690369427"
+                            />
+                            <div style="display: table">
+                              <h3>Magnus Radcliffe</h3>
+                              <p>Your husband will love it, they are great!</p>
+                              <div class="fbbuttons" likes="3" datum="2 h">
+                                <p style="color: #7f7f7f">
+                                  <span class="like blue">Like</span>
+                                  ·&nbsp;<span class="reply blue">Reply</span>
+                                  ·&nbsp;<img
+                                    class="likeduim"
+                                    src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                                  />&nbsp;<span class="aantallikes grijs"
+                                    >3</span
+                                  >
+                                  ·&nbsp;<span class="cmtdatum grijs">2 h</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/16-min.jpg?v=1690369426"
+                      />
+                      <div style="display: table">
+                        <h3>Quillon Bannister</h3>
+                        <p>
+                          This product is great! Feels quite similar to one of
+                          those TENS units, but the relief EMS technology gives
+                          you is much better! And without those messy wires of
+                          the old TENS units. My back feels stronger than ever.
+                          I have used mine for about 4 weeks now and the relief
+                          is amazing. I use mine every morning when I wake up
+                          and every night before I go to sleep. Thank you to
+                          whoever created this product.
+                        </p>
+                        <div class="fbbuttons" likes="8" datum="3 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">6</span>
+                            ·&nbsp;<span class="cmtdatum grijs">2 h</span>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/17-min.jpg?v=1690369427"
+                      />
+                      <div style="display: table">
+                        <h3>Elowen Cavanaugh</h3>
+                        <p>Absolutely love this massager!</p>
+                        <div class="fbbuttons" likes="1" datum="4 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">2</span>
+                            ·&nbsp;<span class="cmtdatum grijs">1 h</span>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/18-min.jpg?v=1690369427"
+                      />
+                      <div style="display: table">
+                        <h3>Elizabeth Miller</h3>
+                        <p>
+                          I was a skeptic initially… Bought 6 of these massagers
+                          and I didn’t really feel a difference at first. But
+                          after using them every day for the past 2 weeks, I can
+                          confirm that they definitely do work!!! My back hasn’t
+                          felt his good in years. I absolutely love them!
+                        </p>
+                        <div class="fbbuttons" likes="3" datum="4 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">12</span>
+                            ·&nbsp;<span class="cmtdatum grijs">7 h</span>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/19-min.jpg?v=1690369427"
+                      />
+                      <div style="display: table">
+                        <h3>Benjamin Moore</h3>
+                        <p>
+                          Great product, has done wonders for my sciatica pain.
+                          I like to use mine on my lower back and my right leg
+                          that suffers from the Sciatica. Works well for
+                          relaxing the muscles and the increased circulation in
+                          my legs has given me a lot more energy.
+                        </p>
+                        <div class="fbbuttons" likes="3" datum="4 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">3</span>
+                            ·&nbsp;<span class="cmtdatum grijs">5 h</span>
+                          </p>
+                        </div>
+                        <ul>
+                          <li style="list-style-type: none">
+                            <img
+                              class="profilepic prflpcCmt"
+                              src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/20-min.jpg?v=1690369427"
+                            />
+                            <div style="display: table">
+                              <h3>John Diggle</h3>
+                              <p>
+                                This is exactly what I needed to hear. Tried
+                                everything for my sciatica but nothing seems to
+                                work. I’m going to order one of these massagers
+                                now
+                              </p>
+                              <div class="fbbuttons" likes="3" datum="2 h">
+                                <p style="color: #7f7f7f">
+                                  <span class="like blue">Like</span>
+                                  ·&nbsp;<span class="reply blue">Reply</span>
+                                  ·&nbsp;<img
+                                    class="likeduim"
+                                    src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                                  />&nbsp;<span class="aantallikes grijs"
+                                    >2</span
+                                  >
+                                  ·&nbsp;<span class="cmtdatum grijs">3 h</span>
+                                </p>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/21-min.jpg?v=1690369427"
+                      />
+                      <div style="display: table">
+                        <h3>Daniel Ballas</h3>
+                        <p>
+                          Can’t wait to get mine! I ordered mine just in time
+                          before they ran out of stock.
+                        </p>
+                        <div class="fbbuttons" likes="3" datum="5 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">4</span>
+                            ·&nbsp;<span class="cmtdatum grijs">1 h</span>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li style="list-style-type: none">
+                      <img
+                        class="profilepic"
+                        src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/22-min.jpg?v=1690369427"
+                      />
+                      <div style="display: table">
+                        <h3>Craig Thorne</h3>
+                        <p>
+                          Mine arrived today! Will test it out tomorrow and let
+                          you guys know how it is. <br /><img
+                            src="https://cdn.shopify.com/s/files/1/0801/4348/3202/files/24_-_min.jpg?v=1690369428"
+                            class="my-custom-imag"
+                            height="200"
+                          />
+                        </p>
+                        <div class="fbbuttons" likes="3" datum="5 h">
+                          <p style="color: #7f7f7f">
+                            <span class="like blue">Like</span> ·&nbsp;<span
+                              class="reply blue"
+                              >Reply</span
+                            >
+                            ·&nbsp;<img
+                              class="likeduim"
+                              src="https://ucarecdn.com/6f24fed0-64b8-4e56-9fdd-c76e61fae250/-/format/auto/-/preview/3000x3000/-/quality/lighter/"
+                            />&nbsp;<span class="aantallikes grijs">2</span>
+                            ·&nbsp;<span class="cmtdatum grijs">5 h</span>
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
